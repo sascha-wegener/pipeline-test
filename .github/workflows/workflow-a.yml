@@ -3,6 +3,9 @@ name: workflow-a
 
 on:
   workflow_call:
+    outputs:
+      foo:
+        value: ${{ jobs.generate-output.outputs.foo }}
 
 jobs:
   generate-output:
