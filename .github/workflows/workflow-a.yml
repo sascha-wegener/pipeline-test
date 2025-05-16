@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Set output
         id: set-output-step
-        run: echo "foo=42" >> $GITHUB_OUTPUT
+        run: echo "foo=42" >> "$GITHUB_OUTPUT"
 
     outputs:
       foo: ${{ steps.set-output-step.outputs.foo }}

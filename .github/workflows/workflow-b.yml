@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: Print foo
         run: |
-         echo "Foo value is: ${{ inputs.foo }}"
+          echo "Foo value is: ${{ inputs.foo }}"
