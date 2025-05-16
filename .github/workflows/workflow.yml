@@ -1,3 +1,18 @@
+# name: Workflow
+
+# on:
+#   push:
+
+# jobs:
+#   call-workflow-a:
+#     uses: ./.github/workflows/workflow-a.yml
+
+#   call-workflow-b:
+#     needs: call-workflow-a
+#     uses: ./.github/workflows/workflow-b.yml
+#     with:
+#       foo: ${{ needs.call-workflow-a.outputs.foo }}
+
 name: Workflow
 
 on:
