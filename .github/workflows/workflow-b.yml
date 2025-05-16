@@ -1,15 +1,18 @@
-name: Workflow B
+# .github/workflows/workflow-b.yml
+name: workflow-b
 
 on:
   workflow_call:
     inputs:
       foo:
         type: string
+        description: "Value of foo to print"
         required: true
 
 jobs:
-  job:
+  print-input:
     runs-on: ubuntu-latest
     steps:
-      - name: Output foo
-        run: echo "Foo is ${{ inputs.foo }}"
+      - name: Print foo
+        run: |
+         echo "Foo value is: ${{ inputs.foo }}"

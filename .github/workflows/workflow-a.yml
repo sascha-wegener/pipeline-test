@@ -1,16 +1,16 @@
-name: Workflow A
+# .github/workflows/workflow-a.yml
+name: workflow-a
 
 on:
-  workflow_call:
-    
+  workflow_dispatch:
+
 jobs:
-  job:
+  generate-output:
     runs-on: ubuntu-latest
-    outputs:
-      foo: ${{ steps.generate-output.outputs.foo-value }}
-    
     steps:
-      - name: Generate output
-        id: generate-output
-        run:
-          echo "foo-value=bar" >> $GITHUB_ENV
+      - name: Set output
+        id: set-output-step
+        run: echo "::set-output name=foo::42"
+
+    outputs:
+      foo: ${{ steps.set-output-step.outputs.foo }}
