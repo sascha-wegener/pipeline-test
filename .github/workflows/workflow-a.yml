@@ -1,0 +1,16 @@
+name: Workflow A
+
+on:
+  workflow_call:
+    
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    outputs:
+      foo: ${{ steps.generate-output.outputs.foo-value }}
+    
+    steps:
+      - name: Generate output
+        id: generate-output
+        run:
+          echo "foo-value=bar" >> $GITHUB_ENV
